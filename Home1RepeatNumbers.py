@@ -19,10 +19,14 @@ def checkio(data):
     print new_list
     return new_list
 
+
 #  SOLUTION
 #  list.count(x)
     #  Return the number of times x appears in the list.
 
+def checkio1(data):
+    data = [num for num in data.count() > 1]
+    return data
 
 checkio([1, 2, 3, 1, 3])  # == [1, 3, 1, 3]
 checkio([1, 2, 3, 4, 5])  # == []
