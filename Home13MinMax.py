@@ -49,24 +49,24 @@ def result(state, key, *args):
     return 0
 
 
-def min(*args, **kwargs):
+def min1(*args, **kwargs):
     key = kwargs.get("key", None)
     # print result(False, key, *args)
     return result(False, key, *args)
 
 
-def max(*args, **kwargs):
+def max1(*args, **kwargs):
     key = kwargs.get("key", None)
     # print result(True, key, *args)
     return result(True, key, *args)
 
 
-def min1(*args, **kwargs):
+def min(*args, **kwargs):
     key = kwargs.get("key", lambda x: x)
     return reduce(lambda M, x: x if key(x) < key(M) else M, args if len(args) > 1 else args[0])
 
 
-def max1(*args, **kwargs):
+def max(*args, **kwargs):
     key = kwargs.get("key", lambda x: x)
     return reduce(lambda M, x: x if key(x) > key(M) else M, args if len(args) > 1 else args[0])
 
